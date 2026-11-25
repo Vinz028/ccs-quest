@@ -1,0 +1,17 @@
+CCS QUEST — PWA-READY WEB + ANDROID PACKAGE
+============================================
+
+This folder contains your original game plus basic Progressive Web App support.
+
+FILES ADDED:
+- manifest.webmanifest: app name, display mode, and icons
+- sw.js: caches the game files for offline use after the first successful load
+- icons/: app icons for installation and Android packaging
+
+IMPORTANT:
+- Publish this folder over HTTPS (GitHub Pages is one free option).
+- Open the published site once while online and wait for it to finish loading.
+- Then test by turning off internet and reopening the installed PWA.
+- The browser may need the first online visit before offline caching is ready.
+- Scores and history still remain local to each browser/device.
+- This package is not yet an APK. Use the published HTTPS URL in PWABuilder to generate an Android test APK.
