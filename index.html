@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCS Quest — Daily Knowledge Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="topbar">
+      <div class="score-chip"><span class="trophy">🏆</span><div><small>HIGH SCORE</small><strong id="highScore">0</strong></div></div>
+      <button class="icon-btn" id="menuBtn" aria-label="Menu">☰</button>
+      <div class="top-actions">
+        <button class="icon-btn" id="soundBtn" title="Toggle sound">🔊</button>
+        <button class="icon-btn" id="settingsBtn" title="Settings">⚙</button>
+        <button class="icon-btn" id="infoBtn" title="About">ⓘ</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="homeScreen" class="screen active">
+        <div class="hero">
+          <div class="sun"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+          <div class="mountains"><i></i><i></i><i></i></div>
+          <div class="campus campus-left"><span>CCS</span><b></b><b></b><b></b></div>
+          <div class="campus campus-right"><span>⌘</span><b></b><b></b><b></b></div>
+          <div class="signpost">CCS<br><small>ADVENTURE</small></div>
+          <div class="hero-copy">
+            <p class="eyebrow">A DAILY KNOWLEDGE ADVENTURE</p>
+            <h1><span>CCS</span> QUEST</h1>
+            <p class="tagline">LEARN • EXPLORE • LEVEL UP</p>
+            <p class="subline">530+ questions · 25 seconds each · discover the world of computing</p>
+          </div>
+          <div class="pixel-person"><div class="hair"></div><div class="face"></div><div class="body">CCS</div><div class="legs"></div></div>
+          <div class="ground"></div>
+        </div>
+        <div class="home-controls">
+          <button class="main-btn" id="dailyBtn">▶ &nbsp; START DAILY QUEST</button>
+          <div class="button-grid">
+            <button class="secondary-btn" id="archiveBtn">▤ &nbsp; QUESTION ARCHIVE</button>
+            <button class="secondary-btn" id="packsBtn">◆ &nbsp; QUESTION PACKS</button>
+            <button class="secondary-btn" id="unlimitedBtn">∞ &nbsp; UNLIMITED MODE</button>
+            <button class="secondary-btn" id="leaderboardBtn">🏆 &nbsp; LEADERBOARD</button>
+          </div>
+          <p class="dive-number">QUEST #001 <span>•</span> CCS EDITION</p>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="screen panel-screen">
+        <div class="game-heading"><button class="back-btn" id="quitGameBtn">← MENU</button><span id="modeLabel">DAILY QUEST</span><span id="questionCount">1 / 7</span></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <div class="game-card">
+          <div class="question-meta"><span id="categoryLabel">COMPUTER HISTORY</span><span class="timer" id="timer">25</span></div>
+          <h2 id="questionText">Loading question...</h2>
+          <div class="answers" id="answers"></div>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+        </div>
+        <div class="game-footer"><span>⭐ SCORE: <b id="currentScore">0</b></span><span id="streakLabel">🔥 STREAK: 0</span></div>
+      </section>
+
+      <section id="resultScreen" class="screen panel-screen">
+        <div class="result-card">
+          <div class="result-icon">🏆</div><p class="eyebrow">QUEST COMPLETE</p>
+          <h2 id="resultTitle">Great work!</h2>
+          <div class="result-score" id="finalScore">0</div><p>POINTS EARNED</p>
+          <div class="result-stats"><div><strong id="correctCount">0/7</strong><small>CORRECT</small></div><div><strong id="bestStreak">0</strong><small>BEST STREAK</small></div></div>
+          <p class="result-message" id="resultMessage"></p>
+          <button class="main-btn" id="playAgainBtn">↻ &nbsp; PLAY AGAIN</button>
+          <button class="secondary-btn wide" id="homeBtn">⌂ &nbsp; BACK TO HOME</button>
+        </div>
+      </section>
+
+      <section id="contentScreen" class="screen panel-screen">
+        <div class="content-card">
+          <button class="back-btn" id="contentBackBtn">← BACK</button>
+          <h2 id="contentTitle">Question Packs</h2>
+          <div id="contentBody"></div>
+        </div>
+      </section>
+    </main>
+    <footer>CCS QUEST <span>•</span> AN ORIGINAL LAND-BASED PIXEL QUIZ GAME</footer>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="question-bank.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
